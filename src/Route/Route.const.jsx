@@ -1,5 +1,5 @@
 import Home from "../Pages/Home/Home"
-import Music from "../Pages/Music/Music"
+import Movies from "../Pages/Movies/Movies"
 
 
 
@@ -9,11 +9,8 @@ export const routes=[
     element: <Home />
 },
 {
-    path : "/music",
-    element: <Music/>
-},
-// {
-//     path : "",
-//     element: 
-// }
+    path : "/movies",
+    element: <Movies/>
+}
+
 ]
