@@ -43,7 +43,9 @@ function Movies() {
       <Navbar />
       <Wrapper>
         {isLoading ? (
-          <p> <BiCameraMovie className="text-4xl" /> </p> 
+          <div className="flex justify-center items-center h-screen">
+  <BiCameraMovie className="text-blue-300 text-5xl" />
+</div>
         ) : (
           <motion.div
             variants={containerVariants}

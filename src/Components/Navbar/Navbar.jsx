@@ -33,9 +33,9 @@ const location=useLocation()
 
   <div className="col-span-4 flex justify-center">
     <ul className="flex mt-2 text-lg space-x-6">
-      <Link to="/" className={location.pathname === "/" ? "text-white" : "text-cyan-800"}>Home</Link>
-      <Link to="/movies" className={location.pathname === "/movies" ? "text-white" : "text-cyan-800 "}>Movie</Link>
-      <Link to="/category" className={location.pathname === "/category" ? "text-white" : "text-cyan-800"  }>Category</Link>
+      <Link to="/" className={location.pathname === "/" ? "text-white" : "text-blue-300"}>Home</Link>
+      <Link to="/movies" className={location.pathname === "/movies" ? "text-white" : "text-blue-300 "}>Movie</Link>
+      <Link to="/category" className={location.pathname === "/category" ? "text-white" : "text-blue-300"  }>Category</Link>
     </ul>
   </div>
 
