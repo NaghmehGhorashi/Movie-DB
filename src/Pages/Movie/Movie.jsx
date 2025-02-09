@@ -5,6 +5,8 @@ import Wrapper from "../../Components/Wrapper/Wrapper";
 import { BiCameraMovie } from "react-icons/bi";
 import { motion } from "framer-motion";
 import {MovieApi} from "../../Services/ProductApi";
+import FavoriteIcone from "../../Components/FavoritIcone/FavoritIcone";
+import Button from "../../Components/Button/Button";
 
 
 
@@ -42,13 +44,33 @@ function Movie() {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
+
             <img
-              src={movie.poster_path}
+              src={movie.backdrop_path}
               alt={movie.original_title}
-              className="w-60 mx-auto rounded-lg shadow-lg"
+              className="w-full mx-auto borde border-amber-50 border-1 rounded-lg shadow-lg"
             />
             <p className="text-white mt-5 text-xl font-bold">{movie.original_title}</p>
-            <p className="text-gray-400 mt-2">{movie.overview}</p>
+            <p className="text-gray-400 h-auto w-80 mt-2 p-3 font-thin text-left border-1 rounded-lg border-amber-50">{movie.overview}</p>
+     
+             
+            <FavoriteIcone />
+            <Button />
+            <div className="flex flex-wrap gap-9">
+            { movie.casts.slice(0,12).map((cast) => (
+    <div key={cast.id} className="text-center mt-4">
+     
+      <img
+        src={cast.profile_path ? cast.profile_path : "https://via.placeholder.com/100"}
+        alt={cast.name}
+        className="w-20 h-20 borde border-amber-50 border-1  mx-auto"
+      />
+       <p className="text-white mt-2">{cast.name}</p>
+    </div>
+    
+
+))}</div>
+
           </motion.div>
         ) : (
           <p className="text-white text-center mt-10">Movie not found</p>
