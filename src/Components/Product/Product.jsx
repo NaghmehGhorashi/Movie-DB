@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import FavoriteButton from "../../Components/FavoritIcone/FavoritIcone"; 
+import Button from "../Button/Button";
 
 function Product({ poster_path, original_title, popularity }) {
   return (
@@ -20,17 +21,7 @@ function Product({ poster_path, original_title, popularity }) {
         <p className="text-white mt-1 text-sm">Price: {popularity}$</p>
         <div className="mt-1.5"><FavoriteButton /></div>
       </div>
-      <motion.button
-        whileHover={{
-          scale: 1.04,
-          backgroundColor: "rgba(113, 125, 113, 0.8)",
-          color: "#fff",
-          boxShadow: "0px 0px 15px rgba(0, 191, 255, 0.8)",
-        }}
-        className="mt-3 text-white border-1 rounded-2xl cursor-pointer w-30 h-8 ml-2.5"
-      >
-        Add To Cart
-      </motion.button>
+   <div className="mt-3"> <Button /></div>
     </motion.div>
   );
 }
