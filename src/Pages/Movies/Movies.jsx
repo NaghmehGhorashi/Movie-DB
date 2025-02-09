@@ -55,7 +55,7 @@ function Movies() {
           >
             {movies.map((movie) => (
               <motion.div key={movie.id} variants={itemVariants}>
-                <Link to={`/product/${movie.id}`}>
+                <Link to={`/movies/${movie.id}`}>
                   <Product {...movie} />
                 </Link>
               </motion.div>

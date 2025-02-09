@@ -10,7 +10,7 @@ export async function MoviesApi() {
     return response;
   } catch (error) {
     console.error("API Fetch Error:", error);
-    return { data: [] };
+   
   }
 }
 
@@ -20,6 +20,6 @@ export async function MovieApi(id) {
     return response;
   } catch (error) {
     console.error("API Fetch Error:", error);
-    return { data: null };
+  
   }
 }
