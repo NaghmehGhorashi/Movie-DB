@@ -6,7 +6,7 @@ const BaseUrl = axios.create({
 
 export async function MoviesApi() {
   try {
-    const response = await BaseUrl.get("/movies");
+    const response = await BaseUrl.get("/movies2");
     return response;
   } catch (error) {
     console.error("API Fetch Error:", error);
@@ -16,7 +16,7 @@ export async function MoviesApi() {
 
 export async function MovieApi(id) {
   try {
-    const response = await BaseUrl.get(`/movies/${id}`);
+    const response = await BaseUrl.get(`/movies2/${id}`);
     return response;
   } catch (error) {
     console.error("API Fetch Error:", error);

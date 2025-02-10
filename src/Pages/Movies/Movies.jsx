@@ -1,9 +1,9 @@
-import Navbar from "../../Components/Navbar/Navbar";
-import Wrapper from "../../Components/Wrapper/Wrapper";
+import Navbar from "../../Components/Share.Components/Navbar/Navbar";
+import Wrapper from "../../Components/Share.Components/Wrapper/Wrapper";
 import { useEffect, useState } from "react";
 import { MoviesApi } from "../../Services/ProductApi";
 import { BiCameraMovie } from "react-icons/bi";
-import Product from "../../Components/Product/Product";
+import Product from "../../Components/Share.Components/Product/Product";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 

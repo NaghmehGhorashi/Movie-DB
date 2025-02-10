@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import FavoriteButton from "../../Components/FavoritIcone/FavoritIcone"; 
-import Button from "../Button/Button";
+import FavoriteButton from "../../Core.Components/FavoriteButton/FavoriteButton"; 
+import Button from "../../Core.Components/Button/Button";
 
 function Product({ poster_path, original_title, popularity }) {
   return (
