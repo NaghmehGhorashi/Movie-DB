@@ -1,4 +1,4 @@
-import Navbar from "../../Share.Components/Navbar/Navbar"
+import Navbar from "../Navbar/Navbar"
 
 function Layout({children}) {
   return (

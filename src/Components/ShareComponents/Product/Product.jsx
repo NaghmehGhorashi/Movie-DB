@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import FavoriteButton from "../../Core.Components/FavoriteButton/FavoriteButton"; 
-import Button from "../../Core.Components/Button/Button";
+import FavoriteButton from "../../CoreComponents/FavoriteButton/FavoriteButton"; 
+import Button from "../../CoreComponents/Button/Button";
 
 function Product({ poster_path, original_title, popularity }) {
   return (
@@ -21,7 +21,7 @@ function Product({ poster_path, original_title, popularity }) {
         <p className="text-white mt-1 text-sm">Price: {popularity}$</p>
         <div className="mt-1.5"><FavoriteButton /></div>
       </div>
-   <div className="mt-3"> <Button /></div>
+ <Button className="text-sm">Add to cart</Button>
     </motion.div>
   );
 }

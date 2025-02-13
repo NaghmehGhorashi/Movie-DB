@@ -1,5 +1,5 @@
 
-import Navbar from "../../Components/Share.Components/Navbar/Navbar";
+import Navbar from "../../Components/ShareComponents/Navbar/Navbar";
 
 
 
