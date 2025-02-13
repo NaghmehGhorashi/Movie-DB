@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Navbar from "../../Components/Share.Components/Navbar/Navbar";
-import Wrapper from "../../Components/Share.Components/Wrapper/Wrapper";
+
+import Wrapper from "../../Components/ShareComponents/Wrapper/Wrapper";
 import { BiCameraMovie } from "react-icons/bi";
 import { motion } from "framer-motion";
 import {MovieApi} from "../../Services/ProductApi";
-import FavoriteIcone from "../../Components/Core.Components/FavoriteButton/FavoriteButton";
-import Button from "../../Components/Core.Components/Button/Button";
+import FavoriteIcone from "../../Components/CoreComponents/FavoriteButton/FavoriteButton";
+import Button from "../../Components/CoreComponents/Button/Button";
 
 
 
@@ -31,7 +31,7 @@ function Movie() {
 
   return (
     <div>
-      <Navbar />
+     
       <Wrapper>
         {isLoading ? (
           <div className="flex justify-center items-center h-screen">

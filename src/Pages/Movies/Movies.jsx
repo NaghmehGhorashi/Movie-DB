@@ -1,9 +1,9 @@
-import Navbar from "../../Components/Share.Components/Navbar/Navbar";
-import Wrapper from "../../Components/Share.Components/Wrapper/Wrapper";
+
+import Wrapper from "../../Components/ShareComponents/Wrapper/Wrapper";
 import { useEffect, useState } from "react";
 import { MoviesApi } from "../../Services/ProductApi";
 import { BiCameraMovie } from "react-icons/bi";
-import Product from "../../Components/Share.Components/Product/Product";
+import Product from "../../Components/ShareComponents/Product/Product";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -40,7 +40,7 @@ function Movies() {
 
   return (
     <div>
-      <Navbar />
+
       <Wrapper>
         {isLoading ? (
           <div className="flex justify-center items-center h-screen">
