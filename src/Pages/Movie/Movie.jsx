@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
 import Wrapper from "../../Components/ShareComponents/Wrapper/Wrapper";
 import { BiCameraMovie } from "react-icons/bi";
 import { motion } from "framer-motion";
