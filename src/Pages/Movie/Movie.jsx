@@ -59,9 +59,9 @@ function Movie() {
             
             <FavoriteIcone />
             <div className="flex flex-row">
-              <Button className="text-blue-300 size-8" OnClick={()=>{ console.log('Movie ID:', movie.id); IncreaseQty(id)}}>+</Button>
-              <span className="text-blue-100">{getProductQty(movie.id)}</span>
-               <Button className="text-blue-300 size-8" OnClick={()=>{DecreaseQty(id)}}>-</Button>
+              <Button className="text-blue-300 size-8" onClick={() => IncreaseQty(id)}>+</Button>
+              <span className="text-blue-100">{getProductQty(id)}</span>
+               <Button className="text-blue-300 size-8" onClick={()=>{DecreaseQty(id)}}>-</Button>
               <Button  className="bg-blue-300">Add</Button>
               
             </div>
@@ -90,4 +90,5 @@ function Movie() {
 }
 
 export default Movie;
+
 
