@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import {MovieApi} from "../../Services/ProductApi";
 import FavoriteIcone from "../../Components/CoreComponents/FavoriteButton/FavoriteButton";
 import Button from "../../Components/CoreComponents/Button/Button";
+import {useAppContext} from "../../Context/AppContextProvider"
 
 
 
@@ -13,12 +14,15 @@ function Movie() {
   const [movie, setMovie] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
+  const {IncreaseQty,DecreaseQty,getProductQty} = useAppContext()
+ 
 
   useEffect(() => {
 
 
     MovieApi(id)
       .then((response) => {
+        console.log("API Response:", response.data);
         setMovie(response.data);
         setIsLoading(false);
       })
@@ -52,9 +56,15 @@ function Movie() {
             <p className="text-white mt-5 text-xl font-bold">{movie.original_title}</p>
             <p className="text-gray-400 h-auto w-80 mt-2 p-3 font-thin text-left border-1 rounded-lg border-amber-50">{movie.overview}</p>
      
-             
+            
             <FavoriteIcone />
-            <Button />
+            <div className="flex flex-row">
+              <Button className="text-blue-300 size-8" OnClick={()=>{ console.log('Movie ID:', movie.id); IncreaseQty(id)}}>+</Button>
+              <span className="text-blue-100">{getProductQty(movie.id)}</span>
+               <Button className="text-blue-300 size-8" OnClick={()=>{DecreaseQty(id)}}>-</Button>
+              <Button  className="bg-blue-300">Add</Button>
+              
+            </div>
             <div className="flex flex-wrap gap-9">
             { movie.casts.slice(0,12).map((cast) => (
     <div key={cast.id} className="text-center mt-4">
@@ -80,6 +90,4 @@ function Movie() {
 }
 
 export default Movie;
-
-
 

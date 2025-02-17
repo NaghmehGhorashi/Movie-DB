@@ -9,7 +9,7 @@ function Product({ poster_path, original_title, popularity }) {
         scale: 0.98,
         backgroundColor: "rgba(113, 125, 113, 0.8)",
         color: "#fff",
-        boxShadow: "0px 0px 15px rgba(0, 191, 255, 0.8)",
+        boxShadow: "0px 0px 15px rgb(0, 191, 255, 0.8)",
       }}
       className="border border-amber-50 rounded-lg w-40 h-75 p-2 shadow-md shadow-blue-300"
     >

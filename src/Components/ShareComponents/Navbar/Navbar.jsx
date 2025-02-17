@@ -5,18 +5,10 @@ import { SiThemoviedatabase } from "react-icons/si";
 import { motion } from "framer-motion";
 
 
-// import style from "./Navbar.module.css"
-
-
 const lineVariant = {
   hidden: { opacity:0, x: "100%" }, 
   visible: { opacity: 1, x: "0%", transition: { duration:0.9 } },
 };
-
-
-
-
-
 function Navbar() {
 const location=useLocation()
 
@@ -40,31 +32,14 @@ const location=useLocation()
   </div>
 
   <div className="col-span-1 flex justify-end pr-8">
-    <Link to="/"><FaOpencart className="w-8 h-8 text-white" /></Link>
+    <Link to="/cart"><FaOpencart className="w-8 h-8 text-white" /></Link>
     <Link to="/"><MdOutlineAccountCircle className="w-8 h-8 text-white ml-4" /></Link>
   </div>
 </div>
 
-
-
-      
-             
-         
-        
-        
-       
               <motion.div variants={lineVariant} initial="hidden" animate="visible">
       <motion.hr className="border-t-2 border-white w-full" />
     </motion.div>
-
-
-
-
-
-
-        {/* //     initial={{y:-200}}
-        //  animate={{y:-8}}
-        //  transition={{delay:1 ,duration:1 ,type:"spring",stiffness:100}}/> */}
 
 
     </>
@@ -81,4 +56,3 @@ export default Navbar
 
 
 
-// className={style.navbar}

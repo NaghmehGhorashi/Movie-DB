@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 
-
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
