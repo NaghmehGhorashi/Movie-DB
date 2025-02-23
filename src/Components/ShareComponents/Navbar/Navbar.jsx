@@ -3,6 +3,7 @@ import { MdOutlineAccountCircle } from "react-icons/md";
 import { FaOpencart } from "react-icons/fa6";
 import { SiThemoviedatabase } from "react-icons/si";
 import { motion } from "framer-motion";
+import { useAppContext } from "../../../Context/AppContextProvider";
 
 
 const lineVariant = {
@@ -11,6 +12,8 @@ const lineVariant = {
 };
 function Navbar() {
 const location=useLocation()
+const {cartQty}=useAppContext()
+
 
   return (
     <>
@@ -32,7 +35,15 @@ const location=useLocation()
   </div>
 
   <div className="col-span-1 flex justify-end pr-8">
-    <Link to="/cart"><FaOpencart className="w-8 h-8 text-white" /></Link>
+   
+      <Link to="/cart" className="relative "><FaOpencart className="w-8 h-8 text-white" />
+      {cartQty() > 0 && (
+  <span className="bg-rose-700 text-sm text-amber-50 absolute size-4.5 text-center -top-3 rounded-full -right-3">
+    {cartQty()}
+  </span>
+)}
+
+    </Link>
     <Link to="/"><MdOutlineAccountCircle className="w-8 h-8 text-white ml-4" /></Link>
   </div>
 </div>

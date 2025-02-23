@@ -50,10 +50,10 @@ function DecreaseQty(id) {
 }
   
 function getProductQty(id) {
-  const Movie = CartItems.find(item => item.id === id);
-  return Movie ? Movie.qty : 0;
+  const items = CartItems.find(item => item.id === id);
+  return items ? items.qty : 0;
 }
-function cartqty() {
+function cartQty() {
   return CartItems.reduce((total, item) => total + item.qty, 0);
 }
   
@@ -63,9 +63,8 @@ const removeProductFromCart = (id) => {
 
 
   return (
-    <AppContext.Provider value={{ CartItems,getProductQty,DecreaseQty,IncreaseQty,removeProductFromCart,cartqty}}>
-  
-      {children}
+    <AppContext.Provider value={{ CartItems,getProductQty,DecreaseQty,IncreaseQty,removeProductFromCart,cartQty}}>
+       {children}
     </AppContext.Provider>
   );
 }
