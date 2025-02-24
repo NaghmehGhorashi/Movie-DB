@@ -24,7 +24,7 @@ function Cart() {
 
   let totalPrice=CartItems.reduce( (total,item)=>{
     let selectedProduct=products.find((_item)=>(_item.id==item.id))
-    return total + ((selectedProduct?.price ?? 0)* item.qty)
+    return total + ((selectedProduct?.popularity ?? 0)* item.qty)
   },0)
 
  const submitDiscount = async() => {
