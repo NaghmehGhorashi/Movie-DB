@@ -10,7 +10,6 @@ export async function MoviesApi() {
     return response;
   } catch (error) {
     console.error("API Fetch Error:", error);
-   
   }
 }
 
@@ -20,6 +19,14 @@ export async function MovieApi(id) {
     return response;
   } catch (error) {
     console.error("API Fetch Error:", error);
-  
+  }
+}
+
+export async function checkDiscount({ code }) {
+  try {
+    const response = await BaseUrl.get(`/discount?code=${code}`);
+    return response;
+  } catch (error) {
+    console.error("API Fetch Error:", error);
   }
 }
