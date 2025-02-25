@@ -8,16 +8,15 @@ export const useAppContext = () => {
 
 
  function AppContextProvider({ children }) {
-  const [CartItems, setCartItems] = useState([]);
-
-  console.log(CartItems)
+  const [cartItems, setCartItems] = useState([]);
+  const [isLogin,setIsLogin]=useState(false)
 
   function IncreaseQty(id) {
     console.log('Increasing qty for movie with id:', id);
    setCartItems((currentItems) => {  
-    let IsProductExist = currentItems.find(item => item.id == id); //First, we’ll check with find to see if the item with the specified ID exists in our cart. Then, we’ll either add one more to it or set its initial value to one.
+    let isProductExist = currentItems.find(item => item.id == id); //First, we’ll check with find to see if the item with the specified ID exists in our cart. Then, we’ll either add one more to it or set its initial value to one.
 
-    if (!IsProductExist) {
+    if (!isProductExist) {
     return [...currentItems, { id, qty: 1 }];       //there's nt already product so Add to the cart
     } else {
    return currentItems.map((item) => {  //there is product so lets find the product and increase the qty
@@ -50,11 +49,11 @@ function DecreaseQty(id) {
 }
   
 function getProductQty(id) {
-  const items = CartItems.find(item => item.id === id);
+  const items = cartItems.find(item => item.id === id);
   return items ? items.qty : 0;
 }
 function cartQty() {
-  return CartItems.reduce((total, item) => total + item.qty, 0);
+  return cartItems.reduce((total, item) => total + item.qty, 0);
 }
   
 const removeProductFromCart = (id) => {
@@ -63,7 +62,15 @@ const removeProductFromCart = (id) => {
 
 
   return (
-    <AppContext.Provider value={{ CartItems,getProductQty,DecreaseQty,IncreaseQty,removeProductFromCart,cartQty}}>
+    <AppContext.Provider value={{ 
+      cartItems,
+      getProductQty,
+      DecreaseQty,
+      IncreaseQty,
+      removeProductFromCart,
+      cartQty,
+      isLogin
+      }}>
        {children}
     </AppContext.Provider>
   );

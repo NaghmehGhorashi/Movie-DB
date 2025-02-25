@@ -24,7 +24,7 @@ export async function MovieApi(id) {
 
 export async function checkDiscount({ code }) {
   try {
-    const response = await BaseUrl.get(`/discount?code=${code}`);
+    const response = await BaseUrl.get(`/dis?code=${code}`);
     return response;
   } catch (error) {
     console.error("API Fetch Error:", error);

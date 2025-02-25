@@ -5,16 +5,17 @@ import { MovieApi } from "../../Services/ProductApi";
 import {checkDiscount} from "../../Services/ProductApi"
 import Input from "../../Components/CoreComponents/input/input";
 import Button from "../../Components/CoreComponents/Button/Button";
+import { useParams } from "react-router-dom";
 
 function Cart() {
-  const { CartItems } = useContext(AppContext);
+  const { cartItems } = useContext(AppContext);
   const[products,setProducts]=useState([])
   const[discountCode,setDiscountCode]=useState("")
   const [discountAmount, setDiscountAmount] = useState(0);
-
+const { id } = useParams();
 
   useEffect( ()=>{
-    MovieApi.then( (respond)=>{
+    MovieApi(id).then( (respond)=>{
       let data=respond.data
       setProducts(data)
     })
@@ -22,7 +23,7 @@ function Cart() {
   },[])
 
 
-  let totalPrice=CartItems.reduce( (total,item)=>{
+  let totalPrice=cartItems.reduce( (total,item)=>{
     let selectedProduct=products.find((_item)=>(_item.id==item.id))
     return total + ((selectedProduct?.popularity ?? 0)* item.qty)
   },0)
@@ -38,19 +39,19 @@ function Cart() {
  
   return (
     <div>
-      {CartItems.length > 0 ? (
-        CartItems.map((item) => <CartItem key={item.id} {...item} />)
+      {cartItems.length > 0 ? (
+        cartItems.map((item) => <CartItem key={item.id} {...item} />)
       ) : (
         <p className="text-white flex justify-center mt-20 text-3xl ">No Item In Cart</p>
       )}
-      <p>Total Price: {totalPrice}</p>
-      <p>Discount: <span>{parseInt(totalPrice)* discountAmount/100}</span> </p>
+      <p className="text-blue-50">Total Price: {totalPrice}</p>
+      <p className="text-blue-50">Discount: <span>{parseInt(totalPrice)* discountAmount/100}</span> </p>
       <div className="flex">
         <Input onchange={(e)=>setDiscountCode(e.target.value)} placeholder="write your code"/>
-        <Button onclick={submitDiscount}/>
+        <Button onclick={submitDiscount}>submit</Button>
       </div>
     </div>
-  );
+  );  
 }
 
 export default Cart;
