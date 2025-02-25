@@ -1,10 +1,15 @@
+import { twMerge } from "tailwind-merge";
+import clsx from "clsx";
+
 function Input({ ...rest }) {
   return (
-    <div>
+     <div>
       <input
-        {...rest}
-        className="text-white border rounded-2xl cursor-pointer w-30 h-8 ml-2.5"
-      />
+       
+       className={twMerge(clsx(`border rounded-xl cursor-pointer w-25 h-8`))}
+      {...rest}>
+        
+      </input>
     </div>
   );
 }
