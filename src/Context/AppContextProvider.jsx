@@ -1,4 +1,5 @@
-import { createContext, useState,useContext} from "react";
+import { createContext, useState,useContext, useEffect} from "react";
+import Cookies from "js-cookie";
 
 export const AppContext = createContext({});
 
@@ -10,6 +11,11 @@ export const useAppContext = () => {
  function AppContextProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
   const [isLogin,setIsLogin]=useState(false)
+
+  useEffect( ()=>{
+    if (Cookies.get("token"))
+      setIsLogin(true)
+  },[])
 
   function IncreaseQty(id) {
     console.log('Increasing qty for movie with id:', id);

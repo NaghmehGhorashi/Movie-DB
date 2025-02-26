@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import axios from "axios";
 
 const BaseUrl = axios.create({
@@ -29,4 +30,12 @@ export async function checkDiscount({ code }) {
   } catch (error) {
     console.error("API Fetch Error:", error);
   }
+}
+
+export async function userLogin({ username, password }) {
+  const response = await BaseUrl({
+    method: "post",
+    url: "/login",
+    data: { username, password },
+  });
 }
