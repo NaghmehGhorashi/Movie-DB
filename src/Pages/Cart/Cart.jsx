@@ -45,7 +45,8 @@ const { id } = useParams();
         <p className="text-white flex justify-center mt-20 text-3xl ">No Item In Cart</p>
       )}
       <p className="text-blue-50">Total Price: {totalPrice}</p>
-      <p className="text-blue-50">Discount: <span>{parseInt(totalPrice)* discountAmount/100}</span> </p>
+      <p className="text-blue-50">Discount: <span>{parseInt(totalPrice) * discountAmount/100}</span> </p>
+      <p className="text-blue-50">Discounted price: <span>{(parseInt(totalPrice) - parseInt(totalPrice) * discountAmount / 100)}</span></p>
       <div className="flex">
         <Input onchange={(e)=>setDiscountCode(e.target.value)} placeholder="write your code"/>
         <Button onclick={submitDiscount}>submit</Button>

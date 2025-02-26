@@ -16,7 +16,7 @@ const data ={
 token:"qzctbwsdeafqkkfikkchuihewufhciuweht8njoqeir97y4",
 expire:"1"
 }
-Cookies.set("token",data.token)
+Cookies.set("token",data.token, { expires: 1 / (24 * 60) })
 location.reload()
    }
 
