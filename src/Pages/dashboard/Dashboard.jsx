@@ -60,7 +60,7 @@ function Dashboard() {
               onChange={handelChange}
               className="w-60"
               type="text"
-              name="profile_path" // Changed to match state key
+              name="profile_path"
             />
           </div>
           <div>
