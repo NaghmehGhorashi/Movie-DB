@@ -19,7 +19,6 @@ function Dashboard() {
       ...prevProduct,
       [name]: value, 
     }));
-    console.log({ [name]: value }); 
   };
 
   console.log(newProduct); 
