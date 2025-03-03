@@ -4,9 +4,9 @@ import clsx from "clsx";
 function Textarea({className, label,...rest }) {
   return (
      <div>
-      {label && <label>{label}</label>}
+      {label && <label htmlFor="">{label}</label>} 
       <textarea
-       className={twMerge(clsx(`border rounded-xl cursor-pointer w-25 h-20`))}
+       className={twMerge(clsx(`border rounded-xl cursor-pointer `,className))}
       {...rest} />
         
     

@@ -4,9 +4,9 @@ import clsx from "clsx";
 function Input({ className,label,...rest }) {
   return (
      <div>
-      {label && <label>{label}</label>}
+      {label && <label htmlFor="">{label}</label>} 
       <input
-       className={twMerge(clsx(`border rounded-xl cursor-pointer w-25 h-8`))}
+       className={twMerge(clsx(`border rounded-xl cursor-pointer w-25 h-8`,className))}
       {...rest} />
        </div>
   );
