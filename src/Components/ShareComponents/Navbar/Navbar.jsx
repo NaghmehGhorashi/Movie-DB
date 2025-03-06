@@ -41,7 +41,14 @@ useEffect( ()=>{
 
   <div className="col-span-4 flex justify-center">
     <ul className="flex mt-2 text-lg space-x-6">
-      <Link to="/dashboard" className={_location.pathname === "/dashboard" ? "text-white" : "text-blue-300"  }>Dashboard</Link>
+         {isLogin && (
+          <Link 
+            to="/dashboard" 
+            className={_location.pathname === "/dashboard" ? "text-white" : "text-blue-300"}
+          >
+            Dashboard
+          </Link>
+        )}
       <Link to="/" className={_location.pathname === "/" ? "text-white" : "text-blue-300"}>Home</Link>
       <Link to="/movies" className={_location.pathname === "/movies" ? "text-white" : "text-blue-300 "}>Movie</Link>
       <Link to="/category" className={_location.pathname === "/category" ? "text-white" : "text-blue-300"  }>Category</Link>
