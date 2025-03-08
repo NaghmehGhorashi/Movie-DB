@@ -6,7 +6,7 @@ function Textarea({className, label,...rest }) {
      <div>
       {label && <label htmlFor="">{label}</label>} 
       <textarea
-       className={twMerge(clsx(`border rounded-xl cursor-pointer `,className))}
+       className={twMerge(clsx(`border rounded-md cursor-pointer `,className))}
       {...rest} />
         
     

@@ -10,7 +10,13 @@ export async function MoviesApi() {
     const response = await BaseUrl.get("/movies2");
     return response;
   } catch (error) {
-    console.error("API Fetch Error:", error);
+    if (error.response) {
+      console.error("Error Response:", error.response);
+    } else if (error.request) {
+      console.error("Error Request:", error.request);
+    } else {
+      console.error("API Fetch Error:", error.message);
+    }
   }
 }
 
@@ -19,7 +25,13 @@ export async function MovieApi(id) {
     const response = await BaseUrl.get(`/movies2/${id}`);
     return response;
   } catch (error) {
-    console.error("API Fetch Error:", error);
+    if (error.response) {
+      console.error("Error Response:", error.response);
+    } else if (error.request) {
+      console.error("Error Request:", error.request);
+    } else {
+      console.error("API Fetch Error:", error.message);
+    }
   }
 }
 
@@ -28,7 +40,13 @@ export async function checkDiscount({ code }) {
     const response = await BaseUrl.get(`/dis?code=${code}`);
     return response;
   } catch (error) {
-    console.error("API Fetch Error:", error);
+    if (error.response) {
+      console.error("Error Response:", error.response);
+    } else if (error.request) {
+      console.error("Error Request:", error.request);
+    } else {
+      console.error("API Fetch Error:", error.message);
+    }
   }
 }
 
@@ -38,4 +56,14 @@ export async function userLogin({ username, password }) {
     url: "/login",
     data: { username, password },
   });
+  return response;
+}
+
+export async function createProduct(params) {
+  const response = await BaseUrl({
+    method: "post",
+    url: "/movies2",
+    data: params,
+  });
+  return response;
 }
