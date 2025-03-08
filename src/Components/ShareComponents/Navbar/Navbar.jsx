@@ -48,7 +48,7 @@ useEffect( ()=>{
           >
             Dashboard
           </Link>
-        )}
+        )} 
       <Link to="/" className={_location.pathname === "/" ? "text-white" : "text-blue-300"}>Home</Link>
       <Link to="/movies" className={_location.pathname === "/movies" ? "text-white" : "text-blue-300 "}>Movie</Link>
       <Link to="/category" className={_location.pathname === "/category" ? "text-white" : "text-blue-300"  }>Category</Link>

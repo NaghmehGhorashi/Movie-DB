@@ -37,22 +37,31 @@ const { id } = useParams();
   }
 };
  
-  return (
-    <div>
-      {cartItems.length > 0 ? (
-        cartItems.map((item) => <CartItem key={item.id} {...item} />)
-      ) : (
-        <p className="text-white flex justify-center mt-20 text-3xl ">No Item In Cart</p>
-      )}
-      <p className="text-blue-50">Total Price: {totalPrice}</p>
-      <p className="text-blue-50">Discount: <span>{parseInt(totalPrice) * discountAmount/100}</span> </p>
-      <p className="text-blue-50">Discounted price: <span>{(parseInt(totalPrice) - parseInt(totalPrice) * discountAmount / 100)}</span></p>
-      <div className="flex">
-        <Input onchange={(e)=>setDiscountCode(e.target.value)} placeholder="write your code"/>
-        <Button onclick={submitDiscount}>submit</Button>
-      </div>
-    </div>
-  );  
+return (
+  <div>
+    {cartItems.length > 0 ? (
+      <>
+        {cartItems.map((item) => <CartItem key={item.id} {...item} />)}
+        <div className="flex flex-col items-center h-screen mt-5">
+          <p className="text-blue-50">Total Price: {totalPrice}</p>
+          <p className="text-blue-50">
+            Discount: <span>{parseInt(totalPrice) * discountAmount / 100}</span>
+          </p>
+          <p className="text-blue-50">
+            Discounted Price: <span>{parseInt(totalPrice) - (parseInt(totalPrice) * discountAmount / 100)}</span>
+          </p>
+          <div className="flex mt-5">
+            <Input className="text-amber-50 w-50" onChange={(e) => setDiscountCode(e.target.value)} placeholder="Write your code" />
+            <Button onClick={submitDiscount}>Submit</Button>
+          </div>
+        </div>
+      </>
+    ) : (
+      <p className="text-white flex justify-center mt-20 text-3xl">No Item In Cart</p>
+    )}
+  </div>
+);
+  
 }
 
 export default Cart;

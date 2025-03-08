@@ -25,7 +25,7 @@ useEffect(() => {
   return (
     <div>
       <Wrapper>
-          <div className="grid grid-cols-5">
+          <div className="grid grid-cols-5 mb-5">
              <img className="w-30 h-full col-1" src={data.poster_path} alt={data.original_title} />
               <div className="col-span-1 my-auto"><p className="text-blue-50 ml-3.5"> {data.original_title}</p></div>
               <div className="col-span-1 my-auto"><p className="text-blue-50 ml-3.5"> {data.popularity} $</p></div>
@@ -42,7 +42,9 @@ useEffect(() => {
                 </div>
               </div>
              </div>
+             
           </div>
+          <hr />
     </Wrapper>
     </div>
   )
