@@ -11,7 +11,7 @@ function Product({ poster_path, original_title, popularity }) {
         color: "#fff",
         boxShadow: "0px 0px 15px rgb(0, 191, 255, 0.8)",
       }}
-      className="border border-amber-50 rounded-lg w-40 h-75 p-2 shadow-md shadow-blue-300"
+      className="border border-orange-400 rounded-lg w-40 h-75 p-2 shadow-md shadow-blue-300"
     >
       <img src={poster_path} alt="" className="w-full h-40 object-contain" />
       <p className="text-white mt-5 text-center">

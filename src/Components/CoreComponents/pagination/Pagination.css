@@ -1,0 +1,26 @@
+.pagination-container {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+}
+
+.pagination-page {
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #333;
+}
+
+.pagination-page:hover {
+    background-color: #ffcc80;
+    border-radius: 50%;
+
+}
+
+.pagination-active .pagination-page {
+    background-color: #ff9800;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+}

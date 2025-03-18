@@ -6,8 +6,9 @@ const BaseUrl = axios.create({
 });
 
 export async function MoviesApi() {
+  //MovieApi(page,perPage)
   try {
-    const response = await BaseUrl.get("/movies2");
+    const response = await BaseUrl.get("/movies2"); //pagination ex:(`movies?_page=${page}&per_page=${perPage}&_search=${original_title}`)
     return response;
   } catch (error) {
     if (error.response) {

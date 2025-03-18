@@ -9,7 +9,7 @@ function Button({ children, className = "" ,...rest}) {
       <motion.button
         whileHover={{
           scale: 1.04,
-          backgroundColor: "rgba(113, 125, 113, 0.8)",
+          backgroundColor: "rgb(222, 110, 35)",
           color: "#fff",
           boxShadow: "0px 0px 15px rgba(0, 191, 255, 0.8)",
         }}

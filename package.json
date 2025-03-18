@@ -9,6 +9,9 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.4.7",
     "@tailwindcss/vite": "^4.0.4",
     "axios": "^1.7.9",
     "clsx": "^2.1.1",
@@ -17,7 +20,10 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
+    "react-paginate": "^8.3.0",
     "react-select": "^5.10.1",
+    "react-slick": "^0.30.3",
+    "slick-carousel": "^1.8.1",
     "tailwind-merge": "^3.0.1",
     "tailwindcss": "^4.0.4"
   },

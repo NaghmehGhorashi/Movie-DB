@@ -22,7 +22,7 @@ location.reload()
 
   return (
 <div className="flex justify-center">
-      <div className="flex flex-col items-center border border-amber-50 mt-50 w-80 h-40">
+      <div className="flex flex-col items-center border border-orange-400 mt-50 w-80 h-40">
      
       <p className="text-amber-50">Login</p>
        <Input 
@@ -40,7 +40,7 @@ location.reload()
           placeholder=" Password"
           value={password}
         />
-      <Button onClick={handelLogin} className="mt-3">Submit</Button>
+      <Button onClick={handelLogin} className="mt-3 rounded-lg">Submit</Button>
      
    
   </div>
