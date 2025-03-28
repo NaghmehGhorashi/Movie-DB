@@ -38,11 +38,11 @@ const ImageSlider = () => {
 
   return (
     <Slider {...settings} >
-        <div className="md:px-5"><img className="border-3 h-50 md:h-150 gap-2  border-amber-600 w-full" src={banner1} alt="Slide 1" /></div>
-        <div className="md:px-5"><img className="border-3 h-50 md:h-150 border-amber-600 w-full" src={banner2} alt="Slide 2" /></div>
-        <div className="md:px-5"><img className="border-3 h-50 md:h-150 border-amber-600 w-full" src={banner3} alt="Slide 3" /></div>
-        <div className="md:px-5"><img className="border-3 h-50 md:h-150 border-amber-600 w-full" src={banner4} alt="Slide 4" /></div>
-        <div className="md:px-5"><img className="border-3 h-50 md:h-150 border-amber-600 w-full" src={banner5} alt="Slide 5" /></div>
+        <div className="md:px-5"><img className="border-2 rounded-3xl h-50 md:h-150 border-amber-600 w-full" src={banner1} alt="Slide 1" /></div>
+        <div className="md:px-5"><img className="border-2 rounded-3xl h-50 md:h-150 border-amber-600 w-full" src={banner2} alt="Slide 2" /></div>
+        <div className="md:px-5"><img className="border-2 rounded-3xl h-50 md:h-150 border-amber-600 w-full" src={banner3} alt="Slide 3" /></div>
+        <div className="md:px-5"><img className="border-2 rounded-3xl h-50 md:h-150 border-amber-600 w-full" src={banner4} alt="Slide 4" /></div>
+        <div className="md:px-5"><img className="border-2 rounded-3xl h-50 md:h-150 border-amber-600 w-full" src={banner5} alt="Slide 5" /></div>
     </Slider>
   );
 };
